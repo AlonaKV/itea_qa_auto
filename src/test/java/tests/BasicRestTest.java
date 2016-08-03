@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import static com.jayway.restassured.RestAssured.given;
 
-class BasicRestTest {
+public class BasicRestTest {
     final private static String authKey = "Basic YWxvbmFfa29sZXNuaWtvdmFAbWFpbC5ydTpYV3d5S1IyMDJPRDU4WWhlNnJDRw";
 
 
