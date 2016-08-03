@@ -7,21 +7,21 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Created by mykola on 7/19/2016.
  */
-public class HomePage extends BasePage{
+    public class HomePage extends BasePage {
+        @FindBy(css = ".account-settings-tab")
+        private WebElement accountSettingsTab;
 
-    public HomePage(){
+        @FindBy(id = "advanced-search")
+        private WebElement advancedSearchLink;
 
-        PageFactory.initElements(driver, this);
+
+        public HomePage (){
+            PageFactory.initElements(driver, this);
+            implicitWaitForElement(accountSettingsTab);
+        }
+
+        public SearchResultsPage clickAdvancedSearchLink (){
+            advancedSearchLink.click();
+            return PageFactory.initElements(driver, SearchResultsPage.class);
+        }
     }
-
-    @FindBy(css = ".name")
-    private WebElement userFullName;
-
-    /**
-     * Find user name in the user's home page.
-     * @return - text from element that was found.
-     */
-    public  String getUserFullName() {
-        return userFullName.getText();
-    }
- }

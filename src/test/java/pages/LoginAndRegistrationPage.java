@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Page Object for Registration Page
@@ -11,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 public class LoginAndRegistrationPage extends BasePage {
 
     public LoginAndRegistrationPage() {
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+       // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.linkedin.com/");
         PageFactory.initElements(driver, this);
     }
@@ -96,4 +95,10 @@ public class LoginAndRegistrationPage extends BasePage {
     public String getAlertText () {
         return alertText.getText();
     }
+
+
+    public void ShutDown(){
+        driver.quit();
+    }
+
 }
